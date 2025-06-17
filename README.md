@@ -11,7 +11,7 @@ Repositori ini berisi jawaban dari technical test untuk posisi Data Scientist.
 - File `A_findings.md` berisi ringkasan hasil segmentasi & anomali.
 
 ### 🔹 Bagian B – Python Modeling
-- Buka `notebooks/B_modeling.ipynb` menggunakan Jupyter Notebook atau Google Colab.
+- Buka `notebooks/B_Modeling.ipynb` menggunakan Jupyter Notebook atau Google Colab.
 - Jalankan semua sel dari awal hingga akhir.
 - Model menghasilkan file `model_output.csv` sebagai input untuk bagian C.
 - Ringkasan insight model disajikan di `B_findings.md`.
