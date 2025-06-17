@@ -40,26 +40,26 @@ rfm_segmented AS (
          CASE
 		-- Best Customers (444): sangat baru transaksi (R=4), sangat sering transaksi (F=4), dan nilai transaksi tinggi (M=4)
 		-- Segmen ini adalah pelanggan paling berharga.
-           WHEN r_score = 4 AND f_score = 4 AND m_score = 4 THEN 'Best Customers'     -- 444
+           WHEN r_score = 4 AND f_score = 4 AND m_score = 4 THEN 'Best Customers'     
            
 		-- Loyal Customers (≥333): sering & rutin belanja dengan nilai cukup besar
 		-- Belum tentu transaksi baru-baru ini, tapi menunjukkan konsistensi & loyalitas
-           WHEN r_score >= 3 AND f_score >= 3 AND m_score >= 3 THEN 'Loyal Customers' -- ≥333
+           WHEN r_score >= 3 AND f_score >= 3 AND m_score >= 3 THEN 'Loyal Customers' 
            
 		-- Big Spenders (M=4): nilai transaksi besar, tapi belum tentu sering atau baru melakukan transaksi
-           WHEN m_score = 4 THEN 'Big Spenders'                                       -- M=4
+           WHEN m_score = 4 THEN 'Big Spenders'                                       
            
 		-- Recent Buyers (R=4, F≤2): baru belanja, tapi belum loyal atau belanja dengan nilai besar
 		-- Berpeluang untuk jadi loyal customer
-           WHEN r_score = 4 AND f_score <= 2 THEN 'Recent Buyers'                     -- R=4, F≤2
+           WHEN r_score = 4 AND f_score <= 2 THEN 'Recent Buyers'                     
            
 		-- At Risk (R≤2, F≤2): jarang belanja dan tidak aktif melakukan transaksi
 		-- Customer berpotensi churn, perlu diaktifkan kembali
-           WHEN r_score <= 2 AND f_score <= 2 THEN 'At Risk'                          -- R≤2, F≤2
+           WHEN r_score <= 2 AND f_score <= 2 THEN 'At Risk'                          
            
 		-- Lost Customers (111): tidak aktif, sangat jarang transaksi, dan nilai transaksi kecil
 		-- Kemungkinan besar sudah churn
-           WHEN r_score = 1 AND f_score = 1 AND m_score = 1 THEN 'Lost'               -- 111
+           WHEN r_score = 1 AND f_score = 1 AND m_score = 1 THEN 'Lost'               
            
 		-- Others: tidak masuk kategori manapun
            ELSE 'Others'
@@ -112,7 +112,7 @@ FROM (
 WHERE order_count > 1
 GROUP BY order_month;
 
-# cek dataset
+# cek dataset tanggal
 -- Cek tanggal maksimum
 -- SELECT MAX(STR_TO_DATE(order_date, '%Y-%m-%d')) AS max_date
 -- FROM ecommerce_transactions;
