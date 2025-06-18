@@ -15,6 +15,7 @@ Repositori ini berisi jawaban dari technical test untuk posisi Data Scientist.
 - Jalankan semua sel dari awal hingga akhir.
 - Model menghasilkan file `model_output.csv` sebagai input untuk bagian C.
 - Ringkasan insight model disajikan di `B_findings.md`.
+- decision slide terlampir di link (https://drive.google.com/file/d/1sFOlUHLri4nuan8-DFo9b6Jpt5h93Zw2/view?usp=sharing)
 
 ### 🔹 Bagian C – R Validation
 - Buka `validation.R` menggunakan RStudio.
